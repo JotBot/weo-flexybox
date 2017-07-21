@@ -1,0 +1,101 @@
+input[type="checkbox"]#menu-toggle { display: none;}
+label { display: none; }
+
+nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.TPnav:link, .TPnav:visited {
+	color: #fff !important;    
+}
+
+nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 3%;
+    color: #fff;
+}
+
+nav ul li ul li {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index:1;
+}
+
+@media (max-width: 768px) {
+    label.menu-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding:15px;
+        border: 1px solid;
+        max-width: 10%;
+    }
+    
+    input[type="checkbox"]#menu-toggle:checked ~ nav > ul {
+        height: auto;
+        display: flex;
+    }
+    
+    nav {
+       padding-top: 10px;
+       padding-bottom: 10px;
+    }
+	
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav > ul {
+        height: 0;
+        display: none;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+        
+        background-color: #666;
+        margin-bottom: 10px;
+        padding-top: 10px;
+    }
+    
+    nav ul li ul {
+        padding: 5px;
+        background-color: #999;
+    }
+    
+    nav ul li ul::before {
+        content:'\25b7';
+        margin-top: 10px;
+    }
+
+    nav ul li ul:hover::before {
+        content: '\25BD';
+    }
+    
+    nav ul li ul:hover > li, nav ul li ul:focus li {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    nav ul li ul li {
+        display: none;
+        flex-direction: column;
+        position: initial;
+    }
+}
